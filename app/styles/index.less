@@ -1,0 +1,122 @@
+@import "_variables.less";
+@import "../../vendor/styles/bootstrap/_bootstrap.less";
+@import "../../vendor/styles/bootstrap/_responsive.less";
+@import "../../vendor/styles/_flatty.less";
+@import "_loading.less";
+@import "../../vendor/styles/fontawesome/_font-awesome.less";
+
+*, *:before, *:after { .box-sizing(border-box); }
+
+input {
+    .box-sizing(content-box);
+}
+
+body {
+  @media (min-width: 979px){
+    //padding-top: 60px;
+    .navbar-fixed-top {
+       margin-bottom: 21px;
+    }
+    .globalAlert.active{
+      top:51px;
+    }
+  }
+}
+
+::selection {
+  background: lighten(@green, 20%);
+}
+::-moz-selection {
+  background: lighten(@green, 20%);
+}
+
+.fade-hide, .fade-show{
+  .transition(all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s);
+}
+.fade-hide{
+  opacity:1;
+}
+.fade-hide.fade-hide-active{
+  opacity:0;
+}
+
+.fade-show {
+  opacity:0;
+}
+.fade-show.fade-show-active {
+  opacity:1;
+}
+
+.record .row {
+  margin-bottom: 20px;
+}
+.item{
+  margin-top:25px;
+}
+
+.imgContainer{
+  position:relative;
+  .actions{
+    .transition(all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s);
+    padding:10px;
+    border-bottom-right-radius:5px;
+    background-color: @white;
+    position:absolute;
+    left:5px;
+    top:5px;
+    opacity:0.6;
+    
+    &:hover{
+      opacity:1;
+    }
+    a{
+      .transition(all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s);
+      padding: 5px;
+      cursor:pointer;
+      text-decoration:none;
+      font-size:25px;
+      color:@grayDark;
+      &:hover{
+        color:@black;
+      }
+    }
+  }
+
+}
+
+.img-large{
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  padding: 5px;
+  border: 1px solid @grayLighter;
+  max-height: 450px;
+}
+
+.map {
+  height:300px;
+  width:400px;
+  border:2px solid #777777;
+  margin:3px;
+  border:1px solid;
+}
+header.navbar{
+  position:relative;
+}
+.globalAlert {
+  .transition(top cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s);
+  position:absolute;
+  left: 50%;
+  top: 0;
+  .border-radius(0px 0px 5px 5px);
+}
+
+.globalAlert.active{
+  .transition(top cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.75s);
+  top:59px;
+}
+
+footer{
+  margin: 50px 0px 20px 0px;
+
+}
+

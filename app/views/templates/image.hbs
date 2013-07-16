@@ -1,0 +1,20 @@
+<input class="fileInput hidden" type="file" name="filePath" accept="image/*">
+{{#if fileData}}
+  <div class="row">
+    <div class="span12 imgContainer">
+      <div class="actions">
+        <a class="showDialog"><i class="icon-pencil"></i></a>
+        <a class="clear"><i class="icon-remove"></i></a>
+      </div>
+      <img class="img-large" src="{{fileData}}">
+    </div>
+  </div>
+{{else}}
+  <div class="row">
+    <div class="span12">
+      <a class="btn btn-inverse showDialog">
+        <i class="icon-camera-retro"> <span>Add an Picture</span></i>
+      </a>
+    </div>
+  </div>
+{{/if}}
