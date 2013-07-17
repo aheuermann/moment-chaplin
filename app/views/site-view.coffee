@@ -17,6 +17,7 @@ module.exports = class SiteView extends View
 
   alert: (obj)->
     @$el.find('.globalAlert')
+      .removeClass('alert-info alert-error alert-success')
       .addClass("#{obj.type} active")
       .html(obj.message)
     if obj.autoClear
