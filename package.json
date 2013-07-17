@@ -10,7 +10,8 @@
   },
   "scripts": {
     "start": "brunch watch --server",
-    "test": "brunch test"
+    "test": "brunch test",
+    "postinstall": "brunch b -o"
   },
   "dependencies": {
     "brunch": "1.6.x",
