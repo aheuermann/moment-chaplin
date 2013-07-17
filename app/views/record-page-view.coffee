@@ -53,9 +53,6 @@ module.exports = class RecordPageView extends View
     dateRef = @$el.find('.pickdate').data('ref')
     i.date = new Date(dateRef) if dateRef
     i.placeRef = @$el.find('.placeSuggest').data('ref')
-    #i.imgLink = @img?.link
-    #i.imgRef = 
-    #i.imgDelete = @img?.delete
     i
 
   #check if the data is valid. if not, publish an error
