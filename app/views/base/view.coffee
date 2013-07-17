@@ -7,11 +7,17 @@ module.exports = class View extends Chaplin.View
   getTemplateFunction: ->
     @template
 
-  alertInfo: (message) ->
-    @publishEvent 'alert', {type: 'alert-info', message:message}
+  alertInfo: (message, autoClear) ->
+    @_alert 'alert-info', message, autoClear
 
-  alertError: (message= "Oops, that wasn't supposed to happen...") ->
-    @publishEvent 'alert', {type: 'alert-error', message:message}
+  alertError: (message= "Oops, that wasn't supposed to happen...", autoClear) ->
+    @_alert 'alert-error', message, autoClear
+
+  alertSuccess: (message, autoClear) ->
+    @_alert 'alert-success', message, autoClear
+
+  _alert: (type, message, autoClear=false) ->
+    @publishEvent 'alert', {type: type, message:message, autoClear: autoClear}
 
   alertClear: ->
     @publishEvent 'clearAlert'

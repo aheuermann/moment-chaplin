@@ -10,6 +10,7 @@ module.exports = class SiteView extends View
     '#header-container': 'header'
     '#page-container': 'main'
   template: template
+  
   listen:
     'alert mediator': 'alert'
     'clearAlert mediator' : 'clearAlert'
@@ -18,6 +19,10 @@ module.exports = class SiteView extends View
     @$el.find('.globalAlert')
       .addClass("#{obj.type} active")
       .html(obj.message)
+    if obj.autoClear
+      _.delay =>
+        @clearAlert()
+      , 2500 
   
   clearAlert: ->
     @$el.find('.globalAlert')

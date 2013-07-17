@@ -65,12 +65,11 @@ module.exports = class RecordPageView extends View
     errs.push "what" unless i.title
     errs.push "where" unless i.placeRef
     errs.push "when" unless i.date
-    errs.push "image" unless i.filePath
-    console.log i
-    errs.push "image"
+    errs.push "image" unless @model.get 'fileData'
 
     if errs.length > 0
       @alertError "Missing: #{errs.join(', ')}"
+      $('html, body').animate({ scrollTop: 0 }, 1000)
       return false
     
     return true
@@ -83,12 +82,16 @@ module.exports = class RecordPageView extends View
       @model.set(@input())
       @alertInfo "Uploading..."
       $('html, body').animate({ scrollTop: 0 }, 1000)
-      @uploadImage (data) ->
-        console.log data
-        return
-        @model.save {
-          success: ->
-            console.log "success"
+      @uploadImage (response) =>
+        @model.set {
+          imgLink: response.data.link
+          imgRef: response.data.id
+          imgDelete: response.data.deletehash
+        }
+        @model.save null, {
+          success: =>
+            @alertSuccess "Saved...", true
+            @publishEvent '!router:routeByName', 'view', {id: @model.id}
           error: =>
             @alertError()
             @toggleSave()
