@@ -20,7 +20,6 @@ module.exports = class ImageView extends View
 
   loadFile: (e) ->
     f = e.currentTarget.files?[0]
-    console.log f
     if f
       @type = f.type
       reader = new FileReader()
