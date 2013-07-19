@@ -17,7 +17,6 @@ module.exports = class RecordPageView extends View
 
   attach: ->
     super
-
     #image picker and display view
     @subview 'img', new ImageView({container:'.imgViewContainer', model: @model})
    
@@ -116,7 +115,6 @@ module.exports = class RecordPageView extends View
     e = @$el.find('.save')
     disabled = !e.attr('disabled')
     e.attr 'disabled', disabled
-    e.find('.lbl').text((if disabled then "Saving..." else "Record"))
     if disabled
       e.attr 'data-loading', "true"
     else
