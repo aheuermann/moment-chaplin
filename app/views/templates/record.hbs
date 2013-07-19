@@ -1,23 +1,26 @@
 <form class="record">
   <div class="row">
     <div class="span12">
-      <input type="text" placeholder="What" name="title" class="input-xxlarge">
+      <input type="text" placeholder="What" name="title" class="input-xxlarge" tabindex="1">
     </div>
   </div>
   <div class="imgViewContainer"></div>
   <div class="row">
     <div class="span12">
-      <input class="pickdate input-xxlarge" type="text" name="date" placeholder="When">
+      <input class="pickdate input-xxlarge" type="text" name="date" placeholder="When" tabindex="3">
     </div>
   </div>
   <div class="row">
     <div class="span12">
-      <input class="placeSuggest input-xxlarge" type="text" name="placeTitle" placeholder="Where">
+      <input class="placeSuggest input-xxlarge" type="text" name="placeTitle" placeholder="Where" tabindex="4">
     </div>
   </div>
   <div class="row">
     <div class="span12">
-      <button class="btn btn-success save">Record</button>
+      <button class="btn btn-success save effeckt-button expand-right" tabindex="5">
+        <span class="lbl">Record</span>
+        <span class="spinner"></span>
+      </button>
     </div>
   </div>
 </form>

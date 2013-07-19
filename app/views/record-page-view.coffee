@@ -115,6 +115,9 @@ module.exports = class RecordPageView extends View
 
   toggleSave: ->
     e = @$el.find('.save')
-    e.attr 'disabled', !e.attr('disabled')
+    disabled = !e.attr('disabled')
+    e.attr 'disabled', disabled
+    e.find('.lbl').text((if disabled then "Saving..." else "Record"))
+    e.attr 'data-loading', (if disabled then "true" else "")
 
 

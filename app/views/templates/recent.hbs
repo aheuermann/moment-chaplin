@@ -1,12 +1,11 @@
-<div class="item">
-  <div class="row">
-    <div class="span12">
-      <h3> <a href="#/v/{{d._id}}">{{title}}</a></h3>
-      <h4>{{placeTitle}}</h4>
-      <h5 class="muted">{{dateFormat date}}</h5>
+<div class="item effeckt-caption effeckt-caption-2">
+  <a href="/v/{{_id}}">
+    <img src="http://i.imgur.com/{{imgRef}}l.png" class="img" >
+  </a>
+  <figcaption>
+    <div class="effeckt-figcaption-wrap">
+      <h5><a href="/v/{{_id}}">{{title}}</a></h5>
+      <p><a href="/v/{{_id}}">{{placeTitle}}</a></p>
     </div>
-  </div>
-  <div href="/v/{{d._id}}" class="row">
-    <div class="span12"><a href="/v/{{_id}}"><img src="{{imgLink}}" style="max-height:500px" class="img-large"></a></div>
-  </div>
+  </figcaption>
 </div>
