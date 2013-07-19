@@ -20,10 +20,17 @@ module.exports = class ImageView extends View
 
   loadFile: (e) ->
     f = e.currentTarget.files?[0]
+    console.log f
     if f
+      @type = f.type
       reader = new FileReader()
       reader.onload = (e) =>
         @model.set('fileData', reader.result)
       reader.onerror = =>
         @publishEvent 'alert', {type: 'alert-error', message: 'Error loading file...'}
-      reader.readAsDataURL(f)
+      reader.readAsBinaryString(f)
+
+  getTemplateData: ->
+    td = super
+    td.src = "data:#{@type};base64,#{btoa(td.fileData)}" if td.fileData 
+    td

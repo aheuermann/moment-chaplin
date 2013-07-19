@@ -95,14 +95,13 @@ module.exports = class RecordPageView extends View
         }
 
   uploadImage: (done) ->
-    fileData = @model.get('fileData')
     $.ajax({
       url: "https://api.imgur.com/3/image"
       type: "POST"
       headers:
         'Authorization': "Client-ID dd3300b7ef32d64"
       data:
-        image: fileData.substring(fileData.indexOf(',')+1)
+        image: btoa(@model.get('fileData'))
         title: @model.get('title')
     })
     .success((data) ->
@@ -118,6 +117,9 @@ module.exports = class RecordPageView extends View
     disabled = !e.attr('disabled')
     e.attr 'disabled', disabled
     e.find('.lbl').text((if disabled then "Saving..." else "Record"))
-    e.attr 'data-loading', (if disabled then "true" else "")
+    if disabled
+      e.attr 'data-loading', "true"
+    else
+      e.removeAttr 'data-loading'
 
 
