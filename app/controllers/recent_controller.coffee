@@ -13,7 +13,8 @@ module.exports = class RecentController extends Controller
       success: => 
         @alertClear()
         @view = new RecentPageView {region: 'main', collection: moments}
-      error: => 
-        @alertError()
+      error: =>
+        @alertClear()
+        @view = new ErrorView {region: 'main'}
     )
     
