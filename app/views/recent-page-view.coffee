@@ -11,11 +11,11 @@ ItemView = class MomentItemView extends View
     @$el.hide()
     if @model.collection.indexOf(@model)%2 == 0
       setTimeout =>
-        @$el.show().addClass('effeckt-page-transition-right-slide-in')
+        @$el?.show().addClass('effeckt-page-transition-right-slide-in')
       , 200*@model.collection.indexOf(@model)/2
     else
       setTimeout =>
-        @$el.show().addClass('effeckt-page-transition-left-slide-in')
+        @$el?.show().addClass('effeckt-page-transition-left-slide-in')
       , 200*@model.collection.indexOf(@model)/2
 
 module.exports = class RecentPageView extends CollectionView
