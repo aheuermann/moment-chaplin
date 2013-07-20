@@ -1,6 +1,7 @@
 Application = require 'application'
+routes = require 'routes'
 require 'handlebarsConfig'
 
 # Initialize the application on DOM ready event.
 $ ->
-  (new Application).initialize()
+  (new Application({routes:routes}))

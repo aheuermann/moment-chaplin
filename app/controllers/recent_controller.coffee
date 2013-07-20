@@ -1,9 +1,11 @@
 Controller = require 'controllers/base/controller'
-RecentPageView = require 'views/recent-page-view'
+RecentPageView = require 'views/recent_page_view'
 Moments = require 'models/moments'
 
 module.exports = class RecentController extends Controller
-  redirect: -> @redirectToRoute 'recent'
+  redirect: -> 
+    console.log "moments"
+    @redirectToRoute 'recent'
   index: ->
     @alertInfo("Loading...")
     moments = new Moments()

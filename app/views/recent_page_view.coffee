@@ -1,6 +1,6 @@
 template = require 'views/templates/recent'
 View = require 'views/base/view'
-CollectionView = require 'views/base/collection-view'
+CollectionView = require 'views/base/collection_view'
 
 ItemView = class MomentItemView extends View
   className: 'span5 item effeckt-caption effeckt-caption-2'

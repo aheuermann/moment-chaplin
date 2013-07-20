@@ -1,5 +1,5 @@
 Controller = require 'controllers/base/controller'
-MomentPageView = require 'views/moment-view'
+MomentPageView = require 'views/moment_view'
 Moment = require 'models/moment'
 
 module.exports = class ViewController extends Controller

@@ -1,6 +1,6 @@
 template = require 'views/templates/record'
 View = require 'views/base/view'
-ImageView = require 'views/image-view'
+ImageView = require 'views/image_view'
 Moment = require 'models/moment'
 
 module.exports = class RecordPageView extends View
