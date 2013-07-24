@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "brunch watch --server",
-    "test": "brunch test",
+    "test": "brunch build && karma start test/karma.conf.js",
     "postinstall": "brunch b -o"
   },
   "dependencies": {
@@ -19,7 +19,6 @@
     "coffee-script-brunch": ">= 1.0 < 1.7",
     "less-brunch": ">= 1.0 < 1.7",
     "css-brunch": ">= 1.0 < 1.7",
-    "stylus-brunch": ">= 1.0 < 1.7",
     "handlebars-brunch": ">= 1.0 < 1.7",
     "uglify-js-brunch": ">= 1.0 < 1.7",
     "clean-css-brunch": ">= 1.0 < 1.7",
@@ -27,5 +26,10 @@
     "express": "~3.3.4",
     "coffee-script": "~1.6.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "karma": "0.9.5",
+    "karma-mocha": "~0.0.1",
+    "phantomjs": "~1.9.1-0",
+    "karma-phantomjs-launcher": "~0.0.1"
+  }
 }

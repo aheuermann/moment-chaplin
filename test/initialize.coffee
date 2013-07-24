@@ -1,8 +1,5 @@
-tests = [
-  './views/header-view-test'
-  './views/home-page-view-test'
-  './views/site-view-test'
-]
+Application = require('application')
+App = class A extends Application
+  initLayout: -> #don't need layout
 
-for test in tests
-  require test
+new App()

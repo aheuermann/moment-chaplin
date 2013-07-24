@@ -72,7 +72,7 @@ module.exports = class RecordPageView extends View
 
   #do the save
   save: (e)->
-    e.preventDefault()
+    e.preventDefault() if e
     if @isValid()
       @toggleSave()
       @model.set(@input())

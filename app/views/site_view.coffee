@@ -15,7 +15,7 @@ module.exports = class SiteView extends View
     'alert mediator': 'alert'
     'clearAlert mediator' : 'clearAlert'
 
-  alert: (obj)->
+  alert: (obj) ->
     @$el.find('.globalAlert')
       .removeClass('alert-info alert-error alert-success')
       .addClass("#{obj.type} active")

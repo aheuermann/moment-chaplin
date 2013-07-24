@@ -22,7 +22,3 @@ module.exports = class RecentPageView extends CollectionView
   className: 'recent-page'
   itemView: ItemView
   animationDuration:0
-
-  initItemView: (model)->
-    super
-
