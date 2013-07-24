@@ -4,8 +4,8 @@ Moments = require 'models/moments'
 
 module.exports = class RecentController extends Controller
   redirect: -> 
-    console.log "moments"
     @redirectToRoute 'recent'
+  
   index: ->
     @alertInfo("Loading...")
     moments = new Moments()
