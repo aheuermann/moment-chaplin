@@ -9,7 +9,7 @@ module.exports = class ViewController extends Controller
     @alertInfo("Loading...")
     moment = new Moment()
     moment.id = args.id
-    moment.fetch (
+    @request = moment.fetch(
       success:(model, response, options) => 
         @alertClear()
         @view = new MomentPageView {region: 'main', model: moment}
@@ -20,5 +20,10 @@ module.exports = class ViewController extends Controller
         else
           @view = new ErrorView {region: 'main'}
     )
+
+
+  dispose: ->
+    @request.abort() if @request
+    super
 
     

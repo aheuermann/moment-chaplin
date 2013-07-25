@@ -9,12 +9,17 @@ module.exports = class RecentController extends Controller
   index: ->
     @alertInfo("Loading...")
     moments = new Moments()
-    moments.fetch(
+    @request = moments.fetch(
       success: => 
+        @request = null
         @alertClear()
         @view = new RecentPageView {region: 'main', collection: moments}
       error: =>
+        @request = null
         @alertClear()
         @view = new ErrorView {region: 'main'}
     )
     
+  dispose: ->
+    @request.abort() if @request
+    super
