@@ -1,5 +1,6 @@
 Controller = require 'controllers/base/controller'
 RecentPageView = require 'views/recent_page_view'
+ErrorView = require 'views/errors/error_view'
 Moments = require 'models/moments'
 
 module.exports = class RecentController extends Controller
